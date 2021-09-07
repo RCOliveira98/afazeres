@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
+import { todoReducer } from './features/todo/todo.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import { StoreModule } from '@ngrx/store';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({todo: todoReducer}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
