@@ -7,6 +7,7 @@ import { TodoFooterComponent } from './components/todo-footer/todo-footer.compon
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoPageComponent } from './components/todo-page/todo-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TodoPageComponent } from './components/todo-page/todo-page.component';
   ],
   imports: [
     CommonModule,
-    TodoRoutingModule
+    TodoRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class TodoModule { }

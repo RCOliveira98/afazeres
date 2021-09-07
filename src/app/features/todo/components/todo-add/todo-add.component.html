@@ -1,4 +1,6 @@
-<div>
-    <input id="all">
-    <button>Adicionar</button>
-</div>
+<form [formGroup]="formulario" (ngSubmit)="adicionarTarefa()">
+    <label for="all">Nova tarefa: </label>
+    <input id="all" type="text" formControlName="texto">
+    <button type="submit" [disabled]="!formulario.valid">Adicionar</button>
+    <button type="reset" [disabled]="!formulario.valid" (click)="limparTexto()">Limpar</button>
+</form>
